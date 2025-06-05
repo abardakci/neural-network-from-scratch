@@ -1,6 +1,6 @@
 import numpy as np
 
-def bce_softmax_gradien(yhat: np.array, y: np.array):
+def cross_entropy_softmax_gradien(yhat: np.array, y: np.array):
     return yhat - y
 
 class NeuralNetwork:
@@ -17,7 +17,7 @@ class NeuralNetwork:
         return z # yhat (10,)
     
     def backpropagation(self, yhat: np.array, y: np.array, learning_rate=0.0001):
-        dL_dx = bce_softmax_gradien(yhat, y)
+        dL_dx = cross_entropy_softmax_gradien(yhat, y)
         i = len(self.layers) - 1
         while i >= 0:
             dL_dx = self.layers[i].backpropagate(dL_dx, learning_rate)

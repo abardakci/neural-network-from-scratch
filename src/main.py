@@ -43,7 +43,7 @@ def main():
             lr = lr * (decay_rate ** epoch)
 
             if i % (TRAIN_SIZE / 10) == 0:
-                print("%", int(i / 60000 *100))
+                print("Training: %", int(i / 60000 *100))
 
             yhat = nn.forward(x_train[i])
             
