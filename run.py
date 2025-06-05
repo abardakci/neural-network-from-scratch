@@ -29,4 +29,4 @@ if not os.path.exists(mnist_train_csv_path) or not os.path.exists(mnist_test_csv
 
 # main.py
 print(f"'{main_py_path}' executing...")
-result = subprocess.run([sys.executable, main_py_path], capture_output=True, text=True)
+subprocess.run([sys.executable, main_py_path])
